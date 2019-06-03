@@ -19,7 +19,7 @@ public class AddUserMain {
 
         try {
             transaction.begin();
-            User user = doBizLogic();
+            User user = new User("user@user.com", "user1", new Date());
             entityManager.persist(user);
             transaction.commit();
 
@@ -36,9 +36,4 @@ public class AddUserMain {
         }
         entityManagerFactory.close();
     }
-
-    private static User doBizLogic() {
-        return new User("user@user.com", "user1", new Date());
-    }
-
 }
